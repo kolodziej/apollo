@@ -88,10 +88,23 @@
 {% macro page_header(title) %}
     {% if title %}
     <div class="page-header">
-        {{ title }}<span class="primary-color" style="font-size: 1.6em">.</span>
+        <h1>{{ title }}<span class="primary-color" style="font-size: 1.6em">.</span></h1>
     </div>
     {% endif %}
-{% endmacro content %}
+{% endmacro page_header %}
+
+{% macro book_header(title, authors) %}
+    {% if title %}
+    <div class="page-header">
+        <h1>{{ title }}<span class="primary-color" style="font-size: 1.6em">.</span></h1>
+        <h2><span class="by">by</span>
+            {%- for author in authors %}
+            {{ author }}
+            {% endfor -%}
+        </h2>
+    </div>
+    {% endif %}
+{% endmacro book_header %}
 
 {% macro home_page(section) %}
 <main>
@@ -109,7 +122,11 @@
     <article>
         <div class="title">
             {#<h1 class="title">{{ page.title }}</h1>#}
+            {% if page.extra.book_author %}
+            {{ post_macros::book_header(title=page.title, authors=page.extra.book_author) }}
+            {% else %}
             {{ post_macros::page_header(title=page.title) }}
+            {% endif %}
 
                 <div class="meta">
                     {% if page.date %}
