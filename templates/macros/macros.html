@@ -97,11 +97,7 @@
     {% if title %}
     <div class="page-header">
         <h1>{{ title }}<span class="primary-color" style="font-size: 1.6em">.</span></h1>
-        <h2><span class="by">by</span>
-            {%- for author in authors %}
-            {{ author }}
-            {% endfor -%}
-        </h2>
+        <h2><span class="by">by</span> {{ authors | join(sep=", ") }}</h2>
     </div>
     {% endif %}
 {% endmacro book_header %}
