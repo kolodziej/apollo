@@ -1,4 +1,4 @@
-$bg-0: #121212;
+$bg-0: #1F1A4E;
 
 // Dark theme needs a bigger contrast compared to the white theme.
 $bg-1: lighten($bg-0, 5%);
@@ -19,7 +19,7 @@ $text-2: lighten($bg-0, 40%);
 
   --border-color: var(--bg-2);
 
-  --primary-color: #ef5350;
+  --primary-color: #90D1BB;
   --hover-color: white;
 
   --icon-filter: invert(1);
