@@ -42,13 +42,20 @@
     </ul>
 {% endmacro list_posts %}
 
-{% macro page_header(title) %}
+{% macro page_header(title, authors="") %}
+    {% if title %}<div class="page-header">{{ title }}</div>{% endif %}
+    {% if authors %}<h2 class="authors"><span class="by">by</span> {{ authors | join(sep=", ") }}</h2>{% endif %}
+{% endmacro content %}
+
+{% macro book_header(title, authors) %}
     {% if title %}
-        <div class="page-header">
-            {{ title }}
-        </div>
+    <div class="page-header">
+        <h1>{{ title }}<span class="primary-color" style="font-size: 1.6em">.</span></h1>
+        <h2 class="authors"><span class="by">by</span> {{ authors | join(sep=", ") }}</h2>
+    </div>
     {% endif %}
-{% endmacro page_header %}
+{% endmacro book_header %}
+
 
 {% macro site_title() %}
     {{ config.title | default(value="Home") }}

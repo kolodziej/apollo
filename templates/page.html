@@ -6,7 +6,11 @@
             <article>
                 <div class="title">
                     {#<h1 class="title">{{ page.title }}</h1>#}
+		    {% if "book_author" in page.extra %}
+                    {{ post_macros::page_header(title=page.title, authors=page.extra.book_author) }}
+		    {% else %}
                     {{ post_macros::page_header(title=page.title) }}
+		    {% endif %}
 
                     <div class="meta">
                         {% if page.date %}
