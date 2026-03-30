@@ -161,6 +161,32 @@ time {
 
 }
 
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 1rem 0;
+  margin: 0;
+
+  .page-prev {
+    margin-right: auto;
+  }
+
+  .page-next {
+    margin-left: auto;
+  }
+
+  .page-link {
+    border-bottom: none;
+    color: var(--text-0);
+
+    &:hover {
+      background-color: var(--primary-color);
+      color: var(--hover-color);
+    }
+  }
+}
+
 // change the line-through color
 del {
   text-decoration-color: var(--primary-color);
