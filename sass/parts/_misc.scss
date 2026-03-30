@@ -11,6 +11,29 @@
   background-color: var(--primary-color);
 }
 
+.archive-label {
+  font-size: 0.5em;
+  text-decoration: none;
+  padding: 2px 5px;
+  border-radius: 4px;
+  margin-right: 6px;
+  border: 1px solid var(--text-1);
+  color: var(--text-1);
+  vertical-align: middle;
+  letter-spacing: 0.05em;
+}
+
+.lang-flag {
+  font-size: 0.65em;
+  margin-right: 3px;
+  vertical-align: middle;
+
+  &.lang-flag--large {
+    font-size: 0.45em;
+    vertical-align: middle;
+  }
+}
+
 ::-moz-selection {
   background: var(--primary-color);
   color: var(--hover-color);

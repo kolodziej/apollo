@@ -6,6 +6,12 @@
 
                 <div>
                     <h1 class="title">
+                        {% if page.extra.archive %}
+                            <span class="archive-label">ARCHIVE</span>
+                        {% endif %}
+                        {% if page.extra.lang %}
+                            <span class="lang-flag">{% if page.extra.lang == "en" %}🇬🇧{% elif page.extra.lang == "pl" %}🇵🇱{% endif %}</span>
+                        {% endif %}
                         <a href={{ page.permalink | safe }}>{{ page.title }}</a>
 
                         {% if page.draft %}
@@ -42,8 +48,8 @@
     </ul>
 {% endmacro list_posts %}
 
-{% macro page_header(title, authors="") %}
-    {% if title %}<div class="page-header">{{ title }}</div>{% endif %}
+{% macro page_header(title, authors="", lang="") %}
+    {% if title %}<div class="page-header">{% if lang %}<span class="lang-flag lang-flag--large">{% if lang == "en" %}🇬🇧{% elif lang == "pl" %}🇵🇱{% endif %}</span> {% endif %}{{ title }}</div>{% endif %}
     {% if authors %}<h2 class="authors"><span class="by">by</span> {{ authors | join(sep=", ") }}</h2>{% endif %}
 {% endmacro content %}
 

@@ -7,9 +7,9 @@
                 <div class="title">
                     {#<h1 class="title">{{ page.title }}</h1>#}
 		    {% if "book_author" in page.extra %}
-                    {{ post_macros::page_header(title=page.title, authors=page.extra.book_author) }}
+                    {{ post_macros::page_header(title=page.title, authors=page.extra.book_author, lang=page.extra.lang | default(value="")) }}
 		    {% else %}
-                    {{ post_macros::page_header(title=page.title) }}
+                    {{ post_macros::page_header(title=page.title, lang=page.extra.lang | default(value="")) }}
 		    {% endif %}
 
                     <div class="meta">
