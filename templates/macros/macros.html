@@ -6,14 +6,14 @@
 
                 <div>
                     <h1 class="title">
-                        {% if page.extra.archive %}
-                            <span class="archive-label">ARCHIVE</span>
-                        {% endif %}
                         {% if page.extra.lang %}
                             <span class="lang-flag">{% if page.extra.lang == "en" %}🇬🇧{% elif page.extra.lang == "pl" %}🇵🇱{% endif %}</span>
                         {% endif %}
                         <a href={{ page.permalink | safe }}>{{ page.title }}</a>
 
+                        {% if page.extra.archive %}
+                            <span class="archive-label">ARCHIVE</span>
+                        {% endif %}
                         {% if page.draft %}
                             <span class="draft-label">DRAFT</span>
                         {% endif %}
