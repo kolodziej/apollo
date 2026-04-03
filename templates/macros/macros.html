@@ -2,7 +2,7 @@
     <li class="list-item">
         <section>
             <div class="post-header">
-                <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+                {% if page.date %}<time>{{ page.date | date(format="%Y-%m-%d") }}</time>{% endif %}
 
                 <div>
                     <h1 class="title">
