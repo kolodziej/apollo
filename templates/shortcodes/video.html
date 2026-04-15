@@ -1,0 +1,10 @@
+<video
+  src="{{ src }}"
+  {% if autoplay %}autoplay{% endif %}
+  {% if loop %}loop{% endif %}
+  {% if muted | default(value=true) %}muted{% endif %}
+  controls
+  playsinline
+  style="width: 100%; height: auto; {{ style | default(value='') }}"
+  class="{{ class | default(value='') }}"
+></video>
