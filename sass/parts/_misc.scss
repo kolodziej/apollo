@@ -193,6 +193,18 @@ del {
   text-decoration-thickness: 3px;
 }
 
+footer {
+  margin-top: 6rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-1);
+  font-size: 0.85em;
+
+  p {
+    margin: 0;
+  }
+}
+
 .MathJax_Display,
 .MJXc-display,
 .MathJax_SVG_Display {
